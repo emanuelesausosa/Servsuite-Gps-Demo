@@ -1,0 +1,38 @@
+<mat-accordion>             
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false"
+                         *ngFor="let vehicle of Vehicles">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{vehicle.Name}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{vehicle.Id}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-list role="list">
+          <mat-list-item role="listitem"> <strong>Mileage: </strong> {{vehicle.Mileage}} </mat-list-item>
+          <mat-list-item role="listitem"> <strong>Mileage Gps: </strong> {{vehicle.MileageGps}} </mat-list-item>
+          <mat-list-item role="listitem"> <strong>Hours: </strong> {{vehicle.Hours}} </mat-list-item>
+          <mat-list-item role="listitem"> <strong>Hours Gps: </strong> {{vehicle.HoursGps}} </mat-list-item>
+          <mat-list-item role="listitem"> <strong>Last Update: </strong> {{vehicle.LastUpdate}} </mat-list-item>
+          <mat-list-item role="listitem"> <strong>Notes: </strong> {{vehicle.Notes}} </mat-list-item>
+      </mat-list>
+      <table>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Date Due</th>
+              <th>Date Complete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of vehicle.Maintenances;">
+                <td>{{item.Description}}</td>
+                <td>{{item.two}}</td>
+                <td>{{item.three}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </mat-expansion-panel>
+  </mat-accordion>
